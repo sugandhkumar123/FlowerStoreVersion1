@@ -124,6 +124,7 @@
       letter-spacing: 1px;
   }
 
+
   .btn-outline-primary {
       border-color: #0DB8DE;
       color: #0DB8DE;
@@ -137,6 +138,7 @@
         color: white;
           background-color: #0DB8DE;
           right: 0px;
+          
       }
 
   .login-btm {

@@ -7,7 +7,7 @@
 
                 
                 
-              <a [routerLink]="['/']"><img src="../assets/images/logoflowerstore.png" style="height: 70px; width: 120px;"></a>
+              <a [routerLink]="['/']"><img src="../assets/images/logoflowerstore.png" style="height: 70px; width: 120px;cursor:pointer;"></a>
                 
                
 
@@ -21,15 +21,15 @@
 
                        
                         <li class="nav-item">
-                            <a [routerLink]="['/register']" style="color: black; margin-left: 40px;" class="nav-link" >Register</a>
+                            <a [routerLink]="['/register']" style="color: black; margin-left: 40px;cursor:pointer;" class="nav-link" >Register</a>
                         </li>
 
                         <li class="nav-item">
-                            <a [routerLink]="['/']" style="color: black; margin-left: 40px;" class="nav-link" >Login</a>
+                            <a [routerLink]="['/']" style="color: black; margin-left: 40px; cursor:pointer;" class="nav-link" >Login</a>
                         </li>
 
                         <li class="nav-item">
-                            <a [routerLink]="['/privacy']" style="color: black; margin-left: 40px;" class="nav-link" >Privacy</a>
+                            <a [routerLink]="['/privacy']" style="color: black; margin-left: 40px;cursor:pointer;" class="nav-link" >Privacy</a>
                         </li>
 
                     </ul>
@@ -142,8 +142,8 @@
     </div>
 
     <br>
-    <div class="col-lg-6 login-btm login-button">
-        <button id="btnReg" type="submit" [disabled]="!edit_emp.valid" class="btn btn-outline-primary" disabled>REGISTER</button>
+    <div class="col-lg-6 login-btm login-button" style="cursor:not-allowed;">
+        <button id="btnReg" style="width: 80%;" type="submit" [disabled]="!edit_emp.valid" class="btn btn-outline-primary" disabled>REGISTER</button>
     </div>
    
 
