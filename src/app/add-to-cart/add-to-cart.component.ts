@@ -77,9 +77,11 @@ export class AddToCartComponent implements OnInit {
             console.log("Updated status of cart: "+data2.status)
           })
         this.msg="Added"
+        this.router.navigate(['/myorder']);
       });
       console.log(this.msg);
-      this.router.navigate(['/myorder']);
+
+      //this.router.navigate(['/myorder']);
 
   }
   
