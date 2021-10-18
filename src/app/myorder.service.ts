@@ -27,7 +27,8 @@ export class MyorderService {
 
   public _url : string= "https://localhost:44343/api/Order/OrderdetailsbyCustomerId?id=";
 
-  public _urlV2 : string= "https://localhost:44343/api/Order/GetAllOrders";
+  //public _urlV2 : string= "https://localhost:44343/api/Order/GetAllOrders";
+  public _urlV2 : string= "https://localhost:44343/api/Order/AllOrders";
 
   public _urlV3 : string= "";
 

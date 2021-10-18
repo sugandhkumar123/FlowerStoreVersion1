@@ -20,6 +20,10 @@ export class UpdateStatusComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // get_status(status){
+
+  // }
+
   IsAuthendicated():boolean{
     const token:string|null=localStorage.getItem("jwt");
     if(token && !this.jwtHelper.isTokenExpired(token) && token!=null)
