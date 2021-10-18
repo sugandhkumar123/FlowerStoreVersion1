@@ -26,21 +26,43 @@ export class MyorderService {
   // ];
 
   public _url : string= "https://localhost:44343/api/Order/OrderdetailsbyCustomerId?id=";
+
+  public _urlV2 : string= "https://localhost:44343/api/Order/GetAllOrders";
+
+  public _urlV3 : string= "";
+
+  usertype:string|null="";
+
   id:number|null=0;
   constructor( private http:HttpClient) { }
   getOrderDetails():Observable<IOrderDetails[]>{
     //this.id=parseInt(localStorage.getItem("custmid"));
     this.id=Number(localStorage.getItem("custmid"));
+    this.usertype=localStorage.getItem("userType");
     console.log(this.id)
-    return this.http.get<IOrderDetails[]>(this._url+this.id,
-    {
-      headers:new HttpHeaders({
-      'Content-Type':'application/json;charset=UTF-8',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Method':'*'
-      })
-  
-    })
+    if(this.usertype=="Admin"){
+      return this.http.get<IOrderDetails[]>(this._urlV2,
+        {
+          headers:new HttpHeaders({
+          'Content-Type':'application/json;charset=UTF-8',
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Method':'*'
+          })
+      
+        })
+    }
+    else{
+      return this.http.get<IOrderDetails[]>(this._url+this.id,
+        {
+          headers:new HttpHeaders({
+          'Content-Type':'application/json;charset=UTF-8',
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Method':'*'
+          })
+      
+        })
+    }
+    
   }
   // getOrderDetails(){
   //   return this.orderdetails;

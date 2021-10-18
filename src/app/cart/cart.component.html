@@ -144,7 +144,8 @@
 
 
 <table class="table">
-    <thead>
+    <thead *ngIf="cart?.length"> 
+        
         <tr>
 
             <th>
@@ -185,8 +186,12 @@
                 <button class="btn btn-primary" [routerLink]="['/addtocart',item.cartId]">Place Order</button>
                 <!-- <button class="btn btn-success" (click)="delete_api(cart.cartId)">Delete</button> | -->
             </td>
-        </tr>  
+        </tr> 
+        
     </tbody>
+    <tr *ngIf="cart?.length==0">
+        <td colspan="5" style="text-align: center;padding-top: 50px;"><h2>Cart is Empty</h2></td>
+    </tr> 
 </table>
 </div>
 <footer id="foo1" class="bord2 footer text-muted">

@@ -18,6 +18,10 @@ export class MyorderComponent implements OnInit {
 
   orderdetails:IOrderDetails[]=[];
   remark: string;
+
+  Admin:boolean=true; usertype:string|null='';
+ 
+
   constructor(private router: Router,private route:ActivatedRoute, private obj:MyorderService,private jwtHelper:JwtHelperService) {this.remark = ""}
 //constructor(){  }
 
@@ -29,6 +33,7 @@ export class MyorderComponent implements OnInit {
     this.obj.getOrderDetails().subscribe(data=>{
       this.orderdetails = data;
       console.log(this.orderdetails);
+      this.usertype=localStorage.getItem("userType"); if(this.usertype=="User"){ this.Admin=false;}
     });
   }
 

@@ -31,6 +31,7 @@ import { ManageProfileComponent } from './manage-profile/manage-profile.componen
 import { LogoutComponent } from './logout/logout.component';
 import { MyorderComponent } from './myorder/myorder.component';
 import { JwtComponent } from './jwt/jwt.component';
+import { UpdateStatusComponent } from './update-status/update-status.component';
 //import { MatCardModule } from '@angular/material/card';
 //import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export function tokenGet() {
@@ -53,7 +54,8 @@ export function tokenGet() {
     ManageProfileComponent,
     LogoutComponent,
     MyorderComponent,
-    JwtComponent
+    JwtComponent,
+    UpdateStatusComponent
   ],
   imports: [
     BrowserModule,

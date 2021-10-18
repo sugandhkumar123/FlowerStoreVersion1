@@ -134,43 +134,43 @@
    </header>
 
 
-    <div class="container">
-        <h1>View all orders</h1>
-        <table class="table" style="margin-top: 60px;border:2px solid red;">
-            <thead>
-                <tr style="border: 2px solid red;">
-                    <th>Order number</th>
-                    <th>Flower id</th>
-                    <th>Total price</th>
-                    <th>Remark</th>
-                    <th>Order status</th>
-                </tr>
-            </thead>
-            <tbody *ngFor="let item of orderdetails">
-                <tr>
-                    <td>{{item.orderId}}</td>
-                    <td>{{item.flowerId}}</td>
-                    <td>{{item.totalprice}}</td>
-                    <td>{{item.remark}}</td>
-                    <td>{{item.paymentStatus}}</td>
-                    <td *ngIf="Admin">
-                        <button class="btn btn-primary" [routerLink]="['/updateStatus']">Update Status</button> 
-                    </td>
-                    <td *ngIf="!Admin"><button type="button"
-                            (click)="downloadPDf(item.orderId,item.flowerId,item.totalprice,item.remark,item.paymentStatus)">Download
-                            bill</button>
-                    </td>
-                </tr>      
-            </tbody>
-            <tr *ngIf="!orderdetails || orderdetails.length==0">
-                <td colspan="5" style="text-align: center;padding-top: 50px;"><h2>No Orders to display</h2></td>
-            </tr>
 
-        </table>
+<h1>UpdateStatus</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form [formGroup]="edit_emp" (ngSubmit)="get_status(status)"></form>
+            <div class="text-danger"></div>
+        
+            
+                <div class="form-group">
+                    <label class="form-control-label">Status</label>
+                    <input type="text" formControlName="status" name="tempPass" [(ngModel)]="status" class="form-control" i required>
+                  
+                
+            <!-- <select #cricket (change)="update($event)"> <option value="default">----</option> <option *ngFor="let player of names" [value]="player"> {{player}} </option> </select> -->
+                <!-- <SelectListItem> -->
+                <!-- <select> <option ng-repeat="name in names">{{name}}</option> </select> -->
+                
+              <!-- <select ng-model="item" ng-options="item as item for item in collection"> </select> -->
+              
+              
+              <!-- <option ng-repeat="row in names" value="{{row.name}}">{{row.name}}</option> -->
+       
+            <!-- <select name="UpdateStatus"> 
+                <option value="" disabled>--Select Status--</option> 
+                <option ng-repeat="option in names" value="{{option}}">{{option}}</option> 
+            </select> -->
+           
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
+</div>
 
-    <footer id="foo1" class="bord2 footer text-muted">
-        <div id="footxt" class="container">
-            &copy; 2021 - FlowerStore - Angular and API
-        </div>
-    </footer>
+<!-- <script> var app = angular.module('myApp', []); app.controller('myCtrl', function($scope) { $scope.names = ["Pending","Approved","Out for delivery","Delivered"]; }); </script> -->
+
+
+

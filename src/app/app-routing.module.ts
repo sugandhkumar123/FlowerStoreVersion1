@@ -16,6 +16,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterflowerComponent } from './registerflower/registerflower.component';
 import { RemovefromcartComponent } from './removefromcart/removefromcart.component';
+import { UpdateStatusComponent } from './update-status/update-status.component';
 
 const routes: Routes = [
   {path:'cartadd/:id',component:CartadditionComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path:'privacy', component : PrivacyComponent},
   {path:'manageProfile', component : ManageProfileComponent},
   {path:'logout', component : LogoutComponent},
-  {path:'myorder', component : MyorderComponent}
+  {path:'myorder', component : MyorderComponent},
+  {path:'updateStatus', component : UpdateStatusComponent}
 ];
 
 @NgModule({

@@ -176,7 +176,10 @@
 
 
  <div *ngIf='admin'>
-  <button class="btn btn-primary" [routerLink]="['/registerflower']">Register</button>
+  <button class="btn btn-primary" [routerLink]="['/registerflower']">Add Flower</button>
+  <br>
+  <br>
+  <br>
   <div class="content" >
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
       <div fxFlex="33%" *ngFor='let flower of filteredFlowers' >
